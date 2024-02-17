@@ -20,7 +20,7 @@ function ManageCourse() {
 //   let [status, setStatus] = useState("");
 //   let [createdBy, setCreatedBy] = useState("");
 
-  // let token = sessionStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
 
   let navigate = useNavigate();
 
