@@ -2,6 +2,8 @@ import React, { useEffect, useState, useCallback } from "react";
 import { url } from "../App";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/userSlice";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
@@ -12,6 +14,9 @@ import Card from "react-bootstrap/Card";
 
 function Dashboard() {
   let token = sessionStorage.getItem("token");
+  const user=useSelector((state)=>state.user)
+  console.log(user)
+  const dispatch=useDispatch()
 
   let [students, setStudents] = useState([]);
   let [cards, setCards] = useState([]);
@@ -54,7 +59,7 @@ function Dashboard() {
   };
 
   let handleLogout = async () => {
-    sessionStorage.clear();
+    dispatch(logout())
     navigate("/login");
   };
 

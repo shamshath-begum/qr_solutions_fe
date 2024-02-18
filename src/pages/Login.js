@@ -9,8 +9,9 @@ import { login } from "../redux/userSlice";
 
 function Login() {
     let navigate = useNavigate();
+    // let[user,setUser]=useState({})
     const user=useSelector((state)=>state.user)
-    console.log(user.user)
+    console.log(user)
     const dispatch=useDispatch()
 
   const [show, setShow] = useState(false);
@@ -51,11 +52,15 @@ function Login() {
         let res=await axios.post(`${url}/login`,{
             email,password,
         })
-        console.log(res)
+        console.log(res.data)
+        // setUser(res)
+        console.log(user)
         if(res.status===200){
           sessionStorage.setItem("token",res.data.token)
             sessionStorage.setItem("role", res.data.role);
             toast.success(res.data.message)
+            // setUser(res.data)
+            
             dispatch(login(res.data))
             setInputData({...inputData ,email:"",password:""})
             navigate("/home")

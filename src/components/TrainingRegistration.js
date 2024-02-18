@@ -28,11 +28,11 @@ function TrainingRegistration() {
             timing,
             status,
         },
-        {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        }
+        // {
+        //   headers: {
+        //     authorization: `Bearer ${token}`,
+        //   },
+        // }
       );
       console.log(res)
       // navigate('/display-lead')

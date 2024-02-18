@@ -17,8 +17,8 @@ import ManageTiming from "./components/ManageTiming";
 import TrainingRegistration from "./components/TrainingRegistration";
 import TrainingDashboard from "./components/TrainingDashboard";
 import DisplayTiming from "./components/DisplayTiming";
-// export const url="http://localhost:8000"
-export const url="https://qr-solutions-be.onrender.com/"
+export const url="http://localhost:8000"
+// export const url="https://qr-solutions-be.onrender.com/"
 
 function App() {
   return <div className="App">
